@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Realraum Projector</title>
+</head>
+<body>
+<form method="get" action="/api/command" enctype="application/x-www-form-urlencoded">
+    <h2>Input</h2>
+    <button type="submit" name="command" value="inputHdmi">inputHdmi</button>
+    <button type="submit" name="command" value="inputPc">inputPc</button>
+    <button type="submit" name="command" value="inputComponent1">inputComponent1</button>
+    <button type="submit" name="command" value="inputComponent2">inputComponent2</button>
+    <button type="submit" name="command" value="inputSVideo">inputSVideo</button>
+    <button type="submit" name="command" value="inputVideo">inputVideo</button>
+
+    <h2>Volume</h2>
+    <button type="submit" name="command" value="volumeUp">Volume Up</button>
+    <button type="submit" name="command" value="volumeDown">Volume Down</button>
+    <button type="submit" name="command" value="volumeMute">Mute</button>
+    <button type="submit" name="command" value="volumeUnmute">Unmute</button>
+
+    <h2>Power</h2>
+    <button type="submit" name="command" value="powerOn">Power On</button>
+    <button type="submit" name="command" value="powerOff">Power Off</button>
+
+    <h2>Menu</h2>
+    <button type="submit" name="command" value="menuToggle">Toggle Menu</button>
+    <button type="submit" name="command" value="menuUp">Menu Up</button>
+    <button type="submit" name="command" value="menuDown">Menu Down</button>
+    <button type="submit" name="command" value="menuLeft">Menu Left</button>
+    <button type="submit" name="command" value="menuRight">Menu Right</button>
+    <button type="submit" name="command" value="menuOk">Menu OK</button>
+
+    <h2>Picture</h2>
+    <button type="submit" name="command" value="pictureMute">Mute Picture</button>
+    <button type="submit" name="command" value="pictureUnmute">Unmute Picture</button>
+    <button type="submit" name="command" value="pictureFreeze">Freeze Picture</button>
+    <button type="submit" name="command" value="pictureUnfreeze">Unfreeze Picture</button>
+    <button type="submit" name="command" value="pictureContrastUp" class="ui-not-working">Contrast Up (Not working)</button>
+    <button type="submit" name="command" value="pictureContrastDown" class="ui-not-working">Contrast Down (Not working)</button>
+    <button type="submit" name="command" value="pictureBrightnessUp" class="ui-not-working">Brightness Up (Not working)</button>
+    <button type="submit" name="command" value="pictureBrightnessDown" class="ui-not-working">Brightness Down (Not working)</button>
+</form>
+<noscript>No javascript is required for basic use. however, for basic stuff like decoding errors from query string, javascript is used.</noscript>
+</body>
+<script>
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const error = params.get('error');
+
+    if (error) {
+        alert(error);
+    }
+
+    const newUrl = url.origin + url.pathname;
+    window.history.replaceState({}, document.title, newUrl);
+</script>
+</html>
