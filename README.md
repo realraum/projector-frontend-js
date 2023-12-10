@@ -42,4 +42,17 @@ Wireshark:
 - Volume Mute: `05 00 06 00 00 03 00 fc 13`
 - Volume Unmute: `05 00 06 00 00 03 00 fd 13`
 
+- Auto Button: `05 00 06 00 00 03 00 32 14`
+- Source Button: `05 00 06 00 00 03 00 6f 17`
+- FreezeOn: `05 00 06 00 00 03 00 f0 13`
+- FreezeOff: `05 00 06 00 00 03 00 f1 13`
+- ContrastUp: `05 00 06 00 00 03 00 f6 13`
+- ContrastDown: `05 00 06 00 00 03 00 f7 13`
+- BrightnessUp: `05 00 06 00 00 03 00 f4 13`
+- BrightnessDown: `05 00 06 00 00 03 00 f5 13`
+- ColorUp: `05 00 06 00 00 03 00 f2 13`
+- ColorDown: `05 00 06 00 00 03 00 f3 13`
+- SharpnessUp: `05 00 06 00 00 03 00 f8 13`
+- SharpnessDown: `05 00 06 00 00 03 00 f9 13`
+
 Use `tcp.payload contains "05000600000300" && ip.dst == 192.168.33.41` to filter for commands.
